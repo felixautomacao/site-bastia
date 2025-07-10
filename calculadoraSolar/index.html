@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<title>Automação Industrial</title>
+</head>
+<!-- Header -->
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to bottom, #1f2937, #374151);
+        color: white;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    
+    .header.shrink {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header.shrink img {
+        height: 50px;
+    }
+    
+    .header.shrink h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header.shrink nav {
+        padding: 5px 15px;
+    }
+    
+    body {
+        padding-top: 400px;
+        /* Adapte para corresponder à altura inicial do header */
+    }
+    
+    .header.shrink+main {
+        padding-top: 80px;
+        /* Ajuste para compensar o header menor */
+    }
+    
+    .header.shrink {
+        padding: 10px 20px;
+    }
+    
+    .header.shrink img {
+        height: 40px;
+    }
+    
+    .header.shrink h1 {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+    
+    .header.shrink .menu-container {
+        justify-content: flex-start;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .header {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    section {
+        scroll-margin-top: 160px;
+    }
+</style>
+
+<body class="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 text-gray-800">
+<!-- Header -->
+<header class="header bg-gradient-to-b from-gray-900 to-gray-700 text-white py-6 px-4 shadow-lg fixed w-full z-50 transition-all duration-300" id="main-header">
+<div class="max-w-7xl mx-auto w-full">
+<!-- Linha principal com 3 áreas: logo, título, menu btn -->
+<div class="flex items-center justify-between relative">
+<!-- Logo à esquerda -->
+<div class="flex-shrink-0">
+<img alt="Logo" class="h-16 md:h-20 transition-all duration-300" src="../img/LogoSemFundo.png"/>
+</div>
+<!-- Título centralizado -->
+<div class="absolute left-1/2 transform -translate-x-1/2">
+<h1 class="text-2xl md:text-3xl font-bold text-white transition-all duration-300 text-center">
+                        Felix Automação e Engenharia
+                    </h1>
+</div>
+<!-- Botão hamburguer à direita (mobile) -->
+<div class="md:hidden">
+<button class="text-white text-3xl focus:outline-none" id="menu-toggle">
+          ☰
+        </button>
+</div>
+</div>
+<!-- Menu navegação abaixo -->
+<nav class="hidden md:flex flex-wrap justify-center bg-gray-800 rounded-full px-6 py-2 mt-4 space-x-4 text-base md:text-lg shadow-md" id="mobile-menu">
+<a class="text-gray-200 hover:text-white transition" href="/index.html#inicio">Início</a>
+<a class="text-gray-200 hover:text-white transition" href="/index.html#servicos">Serviços</a>
+<a class="text-gray-200 hover:text-white transition" href="/index.html#obras">Obras</a>
+<a class="text-gray-200 hover:text-white transition" href="/index.html#clientes">Clientes</a>
+<a class="text-gray-200 hover:text-white transition" href="/index.html#contato">Contato</a>
+</nav>
+</div>
+</header>
+<body class="bg-gradient-to-b from-gray-100 to-gray-300">
+<div class="flex flex-col items-center h-auto p-8">
+<!-- Conteúdo principal -->
+<main class="w-full max-w-6xl">
+<div class="flex flex-col items-center p-8">
+<section class="mt-12 bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl" id="calculadora-solar">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">📈 Simule seu Sistema Solar</h2>
+<p class="text-gray-700 mb-4">Placas Trina 610W com Micro Inversores Deye – Instalação Profissional</p>
+<label class="block text-gray-800 font-semibold" for="nomeCliente">Nome do Cliente:</label>
+<input class="w-full p-2 border rounded mb-4" id="nomeCliente" placeholder="Ex: João da Silva" type="text"/>
+<label class="block text-gray-800 font-semibold" for="regiaoCliente">Cidade ou Região:</label>
+<input class="w-full p-2 border rounded mb-4" id="regiaoCliente" placeholder="Ex: Marau - RS" type="text"/>
+<label class="block text-gray-800 font-semibold" for="telefoneCliente">Telefone:</label>
+<input class="w-full p-2 border rounded mb-4" id="telefoneCliente" placeholder="Ex: (54) 98406-2271" type="tel"/>
+<label class="block text-gray-800 font-semibold" for="consumo">Informe seu consumo médio mensal (kWh):</label>
+<input class="w-full p-2 border rounded mb-4" id="consumo" placeholder="Ex: 800" type="number"/>
+<label class="block text-gray-800 font-semibold" for="rede">Tipo de rede elétrica:</label>
+<select class="w-full p-2 border rounded mb-4" id="rede">
+<option value="mono">Monofásica (30 kWh de taxa mínima)</option>
+<option value="bi">Bifásica (50 kWh)</option>
+<option value="tri">Trifásica (100 kWh)</option>
+</select>
+<button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full font-bold" onclick="calcularSistema()">Calcular</button>
+<div class="mt-4 text-gray-900 font-semibold" id="resultado">
+</div>
+</section>
+</div>
+</main>
+</div>
+</body>
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-gray-900 to-gray-700 text-white pt-12 pb-6 mt-10">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div>
+<img alt="Logo" class="h-40 mb-4" src="../img/LogoSemFundo.png"/>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Contato</h3>
+<p class="text-gray-400">📍 Rua Fiori Castioni, 18 - Marau - RS </p>
+<p class="text-gray-400">📞 +55 (54) 9 8406-2271</p>
+<p class="text-gray-400">✉️ felix.cnpj@gmail.com</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Links Rapidos</h3>
+<ul class="text-gray-400 space-y-1">
+<li><a class="text-gray-200 hover:text-white transition" href="/index.html#inicio">Início</a></li>
+<li><a class="text-gray-200 hover:text-white transition" href="/index.html#servicos">Serviços</a></li>
+<li><a class="text-gray-200 hover:text-white transition" href="/index.html#obras">Obras</a></li>
+<li><a class="text-gray-200 hover:text-white transition" href="/index.html#clientes">Clientes</a></li>
+<li><a class="text-gray-200 hover:text-white transition" href="/index.html#contato">Contato</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Siga-nos</h3>
+<div class="flex space-x-4 py-2">
+<a href="https://www.facebook.com/hectormathiasfelix" rel="noopener noreferrer" target="_blank">
+<img alt="Facebook" class="h-6" src="img/facebook-icon.png"/>
+</a>
+<a href="https://www.instagram.com/felix.automacao/" rel="noopener noreferrer" target="_blank">
+<img alt="Instagram" class="h-6" src="img/instagram-icon.png"/>
+</a>
+<a href="https://wa.me/+555484062271?text=Olá!%20Gostaria%20de%20saber%20mais%20informações." rel="noopener noreferrer" target="_blank">
+<img alt="WhatsApp" class="h-6" src="img/whatsapp-icon.png"/>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center text-gray-500 mt-12 border-t border-gray-600 pt-4">
+                © Felix Automacao Industrial. Todos os direitos reservados.
+            </div>
+</div>
+</footer>
+<script src="../script.js">
+</script>
+</body></html>

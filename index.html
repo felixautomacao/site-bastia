@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Automacao Industrial</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<title>Automacao Industrial</title>
+<style>
         .header.shrink {
             padding: 10px 20px;
         }
@@ -37,211 +37,189 @@
         }
     </style>
 </head>
-
 <body class="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 text-gray-800">
-    <!-- Header -->
-    <header id="main-header" class="header bg-gradient-to-b from-gray-900 to-gray-700 text-white py-6 px-4 shadow-lg fixed w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto w-full">
-            <!-- Linha principal com 3 áreas: logo, título, menu btn -->
-            <div class="flex items-center justify-between relative">
-
-                <!-- Logo à esquerda -->
-                <div class="flex-shrink-0">
-                    <img src="img/LogoSemFundo.png" alt="Logo" class="h-16 md:h-20 transition-all duration-300" />
-                </div>
-
-                <!-- Título centralizado -->
-                <div class="absolute left-1/2 transform -translate-x-1/2">
-                    <h1 class="text-2xl md:text-3xl font-bold text-white transition-all duration-300 text-center">
+<!-- Header -->
+<header class="header bg-gradient-to-b from-gray-900 to-gray-700 text-white py-6 px-4 shadow-lg fixed w-full z-50 transition-all duration-300" id="main-header">
+<div class="max-w-7xl mx-auto w-full">
+<!-- Linha principal com 3 áreas: logo, título, menu btn -->
+<div class="flex items-center justify-between relative">
+<!-- Logo à esquerda -->
+<div class="flex-shrink-0">
+<img alt="Logo" class="h-16 md:h-20 transition-all duration-300" src="img/LogoSemFundo.png"/>
+</div>
+<!-- Título centralizado -->
+<div class="absolute left-1/2 transform -translate-x-1/2">
+<h1 class="text-2xl md:text-3xl font-bold text-white transition-all duration-300 text-center">
                         Felix Automação e Engenharia
                     </h1>
-                </div>
-
-                <!-- Botão hamburguer à direita (mobile) -->
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-white text-3xl focus:outline-none">
+</div>
+<!-- Botão hamburguer à direita (mobile) -->
+<div class="md:hidden">
+<button class="text-white text-3xl focus:outline-none" id="menu-toggle">
           ☰
         </button>
-                </div>
-            </div>
-
-            <!-- Menu navegação abaixo -->
-            <nav id="mobile-menu" class="hidden md:flex flex-wrap justify-center bg-gray-800 rounded-full px-6 py-2 mt-4 space-x-4 text-base md:text-lg shadow-md">
-                <a href="#inicio" class="text-gray-200 hover:text-white transition">Início</a>
-                <a href="#servicos" class="text-gray-200 hover:text-white transition">Serviços</a>
-                <a href="#obras" class="text-gray-200 hover:text-white transition">Obras</a>
-                <a href="#clientes" class="text-gray-200 hover:text-white transition">Clientes</a>
-                <a href="#contato" class="text-gray-200 hover:text-white transition">Contato</a>
-                <a href="calculadoraSolar.html" class="text-gray-200 hover:text-white transition">Calculadora Solar</a>
-            </nav>
-        </div>
-    </header>
-
-
-
-
-    <!-- Conteudo principal -->
-    <main class="max-w-6xl mx-auto px-4 pt-60">
-        <section id="inicio" class="mb-16 flex justify-center">
-            <div class="bg-white p-8 rounded-lg shadow max-w-6xl w-full">
-                <h2 class="text-4xl font-bold mb-6 text-center text-gray-900">Felix Automação e Engenharia Elétrica</h2>
-                <p class="text-lg leading-relaxed text-gray-800">
+</div>
+</div>
+<!-- Menu navegação abaixo -->
+<nav class="hidden md:flex flex-wrap justify-center bg-gray-800 rounded-full px-6 py-2 mt-4 space-x-4 text-base md:text-lg shadow-md" id="mobile-menu">
+<a class="text-gray-200 hover:text-white transition" href="#inicio">Início</a>
+<a class="text-gray-200 hover:text-white transition" href="#servicos">Serviços</a>
+<a class="text-gray-200 hover:text-white transition" href="#obras">Obras</a>
+<a class="text-gray-200 hover:text-white transition" href="#clientes">Clientes</a>
+<a class="text-gray-200 hover:text-white transition" href="#contato">Contato</a>
+<a class="text-gray-200 hover:text-white transition" href="calculadoraSolar/">Calculadora Solar</a>
+</nav>
+</div>
+</header>
+<!-- Conteudo principal -->
+<main class="max-w-6xl mx-auto px-4 pt-60">
+<section class="mb-16 flex justify-center" id="inicio">
+<div class="bg-white p-8 rounded-lg shadow max-w-6xl w-full">
+<h2 class="text-4xl font-bold mb-6 text-center text-gray-900">Felix Automação e Engenharia Elétrica</h2>
+<p class="text-lg leading-relaxed text-gray-800">
                     A <span class="font-semibold text-blue-700">automação industrial elétrica</span> é um dos pilares fundamentais para a modernização de processos produtivos, promovendo maior <strong>eficiência</strong>, <strong>segurança</strong> e
                     <strong>controle</strong> em diferentes operações.
-                    <br><br> Na <strong>Felix Automação</strong>, oferecemos soluções completas em <strong>projetos, instalações e manutenção de sistemas elétricos</strong>. Atendemos com excelência diversos segmentos — <strong>indústrias</strong>, <strong>comércios</strong>,
+                    <br/><br/> Na <strong>Felix Automação</strong>, oferecemos soluções completas em <strong>projetos, instalações e manutenção de sistemas elétricos</strong>. Atendemos com excelência diversos segmentos — <strong>indústrias</strong>, <strong>comércios</strong>,
                     <strong>residências</strong> e <strong>áreas rurais</strong> — com uma equipe técnica experiente e comprometida com resultados de alto desempenho.
-                    <br><br> Para facilitar o seu planejamento, desenvolvemos uma ferramenta exclusiva: a <a href="calculadoraSolar.html" class="text-blue-600 font-semibold underline">Calculadora Solar</a>. Com ela, você pode simular gratuitamente o seu
+                    <br/><br/> Para facilitar o seu planejamento, desenvolvemos uma ferramenta exclusiva: a <a class="text-blue-600 font-semibold underline" href="calculadoraSolar/">Calculadora Solar</a>. Com ela, você pode simular gratuitamente o seu
                     sistema fotovoltaico e receber automaticamente uma proposta personalizada com estimativa de investimento e retorno financeiro.
                 </p>
-            </div>
-
-        </section>
-
-        <section id="servicos" class="flex justify-center mb-16">
-            <div class="bg-white p-8 rounded-lg shadow max-w-6xl w-full">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Serviços Prestados</h2>
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">⚙️ Eletrica Industrial</h3>
-                        <p class="text-gray-700 text-sm">
+</div>
+</section>
+<section class="flex justify-center mb-16" id="servicos">
+<div class="bg-white p-8 rounded-lg shadow max-w-6xl w-full">
+<h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Serviços Prestados</h2>
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+<div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">⚙️ Eletrica Industrial</h3>
+<p class="text-gray-700 text-sm">
                             Montagem de paineis, infraestrutura, motores, comandos, NR-12 e manutencao em ambientes industriais.
                         </p>
-                    </div>
-                    <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">🏢 Eletrica Predial</h3>
-                        <p class="text-gray-700 text-sm">
+</div>
+<div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">🏢 Eletrica Predial</h3>
+<p class="text-gray-700 text-sm">
                             Infraestrutura eletrica, quadros de distribuicao, iluminacao, aterramento e sistemas de protecao.
                         </p>
-                    </div>
-                    <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">☀️ Energia Solar</h3>
-                        <p class="text-gray-700 text-sm">
+</div>
+<div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">☀️ Energia Solar</h3>
+<p class="text-gray-700 text-sm">
                             Projeto, fornecimento e instalacao de sistemas fotovoltaicos com homologacao completa.
                         </p>
-                    </div>
-                    <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">📊 Calculadora Solar</h3>
-                        <p class="text-gray-700 text-sm">
+</div>
+<div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">📊 Calculadora Solar</h3>
+<p class="text-gray-700 text-sm">
                             Simule o seu projeto solar e receba uma proposta automatica com retorno estimado do investimento.
                         </p>
-                    </div>
-                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Obras -->
+<!-- Obras -->
+<section class="bg-gray-200 py-16 px-6 rounded-lg shadow mb-16" id="obras">
+<h2 class="text-3xl font-bold text-center mb-10">Nosso Trabalho em Imagens</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Manutenção Industrial" class="rounded-lg shadow mx-auto" src="img/industrial2.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Manutenção Industrial</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Infraestrutura Predial" class="rounded-lg shadow mx-auto" src="img/predial2.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Instalação Predial</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Instalação de Placas Solares" class="rounded-lg shadow mx-auto" src="img/solar2.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Instalação de Placas Solares</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Painel Industrial" class="rounded-lg shadow mx-auto" src="img/industrial1.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Painel Industrial</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Instalação Predial" class="rounded-lg shadow mx-auto" src="img/predial1.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Infraestrutura Predial</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Sistema Solar Fotovoltaico" class="rounded-lg shadow mx-auto" src="img/solar1.jpg"/>
+<figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Sistema Solar Fotovoltaico</figcaption>
+</figure>
+</div>
+</section>
+<!-- Clientes -->
+<section class="bg-white py-16 px-6 rounded-lg shadow mb-16" id="clientes">
+<h2 class="text-3xl font-bold text-center mb-6">Nossos Clientes</h2>
+<p class="text-lg text-center mb-8">Temos orgulho de atender empresas que confiam na nossa qualidade e compromisso técnico.</p>
+<div class="flex flex-wrap justify-center items-center gap-6">
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="JBS" class="h-16 mx-auto" src="img/jbs-logo.png"/>
+<figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">JBS</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="BRF" class="h-16 mx-auto" src="img/brf-logo.png"/>
+<figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">BRF</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Zanin" class="h-16 mx-auto" src="img/zanin-logo.jpg"/>
+<figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Zanin</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="PM Marau" class="h-16 mx-auto" src="img/pmmarau-logo.webp"/>
+<figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Prefeitura de Marau</figcaption>
+</figure>
+<figure class="group text-center transition-transform duration-300 hover:scale-105">
+<img alt="Aton Energia" class="h-16 mx-auto" src="img/sana-logo.jpg"/>
+<figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Grupo Sana</figcaption>
+</figure>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gradient-to-b from-gray-900 to-gray-700 text-white pt-12 pb-6 mt-10" id="contato">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div>
+<img alt="Logo" class="h-40 mb-4" src="img/LogoSemFundo.png"/>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Contato</h3>
+<p class="text-gray-400">📍 Rua Fiori Castioni, 18 - Marau - RS </p>
+<p class="text-gray-400">📞 +55 (54) 9 8406-2271</p>
+<p class="text-gray-400">✉️ felix.cnpj@gmail.com</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Links Rapidos</h3>
+<ul class="text-gray-400 space-y-1">
+<li><a class="hover:text-white" href="#inicio">Inicio</a></li>
+<li><a class="hover:text-white" href="#servicos">Serviços</a></li>
+<li><a class="hover:text-white" href="#obras">Obras</a></li>
+<li><a class="hover:text-white" href="#clientes">Clientes</a></li>
+<li><a class="hover:text-white" href="#contato">Contato</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Siga-nos</h3>
+<div class="flex space-x-4 py-2">
+<a href="https://www.facebook.com/hectormathiasfelix" rel="noopener noreferrer" target="_blank">
+<img alt="Facebook" class="h-6" src="img/facebook-icon.png"/>
+</a>
+<a href="https://www.instagram.com/felix.automacao/" rel="noopener noreferrer" target="_blank">
+<img alt="Instagram" class="h-6" src="img/instagram-icon.png"/>
+</a>
+<a href="https://wa.me/+555484062271?text=Olá!%20Gostaria%20de%20saber%20mais%20informações." rel="noopener noreferrer" target="_blank">
+<img alt="WhatsApp" class="h-6" src="img/whatsapp-icon.png"/>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center text-gray-500 mt-12 border-t border-gray-600 pt-4">
+                © Felix Automacao Industrial. Todos os direitos reservados.
             </div>
-        </section>
-
-        <!-- Obras -->
-        <!-- Obras -->
-        <section id="obras" class="bg-gray-200 py-16 px-6 rounded-lg shadow mb-16">
-            <h2 class="text-3xl font-bold text-center mb-10">Nosso Trabalho em Imagens</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/industrial2.jpg" alt="Manutenção Industrial" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Manutenção Industrial</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/predial2.jpg" alt="Infraestrutura Predial" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Instalação Predial</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/solar2.jpg" alt="Instalação de Placas Solares" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Instalação de Placas Solares</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/industrial1.jpg" alt="Painel Industrial" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Painel Industrial</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/predial1.jpg" alt="Instalação Predial" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Infraestrutura Predial</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/solar1.jpg" alt="Sistema Solar Fotovoltaico" class="rounded-lg shadow mx-auto" />
-                    <figcaption class="text-gray-700 mt-2 font-medium transition-transform duration-300 group-hover:scale-105">Sistema Solar Fotovoltaico</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <!-- Clientes -->
-        <section id="clientes" class="bg-white py-16 px-6 rounded-lg shadow mb-16">
-            <h2 class="text-3xl font-bold text-center mb-6">Nossos Clientes</h2>
-            <p class="text-lg text-center mb-8">Temos orgulho de atender empresas que confiam na nossa qualidade e compromisso técnico.</p>
-            <div class="flex flex-wrap justify-center items-center gap-6">
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/jbs-logo.png" alt="JBS" class="h-16 mx-auto" />
-                    <figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">JBS</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/brf-logo.png" alt="BRF" class="h-16 mx-auto" />
-                    <figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">BRF</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/zanin-logo.jpg" alt="Zanin" class="h-16 mx-auto" />
-                    <figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Zanin</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/pmmarau-logo.webp" alt="PM Marau" class="h-16 mx-auto" />
-                    <figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Prefeitura de Marau</figcaption>
-                </figure>
-                <figure class="group text-center transition-transform duration-300 hover:scale-105">
-                    <img src="img/sana-logo.jpg" alt="Aton Energia" class="h-16 mx-auto" />
-                    <figcaption class="text-gray-600 mt-2 transition-transform duration-300 group-hover:scale-105">Grupo Sana</figcaption>
-                </figure>
-            </div>
-        </section>
-
-
-    </main>
-
-    <!-- Footer -->
-    <footer id="contato" class="bg-gradient-to-b from-gray-900 to-gray-700 text-white pt-12 pb-6 mt-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div>
-                    <img src="img/LogoSemFundo.png" alt="Logo" class="h-40 mb-4" />
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Contato</h3>
-                    <p class="text-gray-400">📍 Rua Fiori Castioni, 18 - Marau - RS </p>
-                    <p class="text-gray-400">📞 +55 (54) 9 8406-2271</p>
-                    <p class="text-gray-400">✉️ felix.cnpj@gmail.com</p>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Links Rapidos</h3>
-                    <ul class="text-gray-400 space-y-1">
-                        <li><a href="#inicio" class="hover:text-white">Inicio</a></li>
-                        <li><a href="#servicos" class="hover:text-white">Serviços</a></li>
-                        <li><a href="#obras" class="hover:text-white">Obras</a></li>
-                        <li><a href="#clientes" class="hover:text-white">Clientes</a></li>
-                        <li><a href="#contato" class="hover:text-white">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Siga-nos</h3>
-                    <div class="flex space-x-4 py-2">
-                        <a href="https://www.facebook.com/hectormathiasfelix" target="_blank" rel="noopener noreferrer">
-                            <img src="img/facebook-icon.png" alt="Facebook" class="h-6" />
-                        </a>
-                        <a href="https://www.instagram.com/felix.automacao/" target="_blank" rel="noopener noreferrer">
-                            <img src="img/instagram-icon.png" alt="Instagram" class="h-6" />
-                        </a>
-                        <a href="https://wa.me/+555484062271?text=Olá!%20Gostaria%20de%20saber%20mais%20informações." target="_blank" rel="noopener noreferrer">
-                            <img src="img/whatsapp-icon.png" alt="WhatsApp" class="h-6" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center text-gray-500 mt-12 border-t border-gray-600 pt-4">
-                &copy; Felix Automacao Industrial. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Script menu responsivo -->
-    <script src="script.js"></script>
+</div>
+</footer>
+<!-- Script menu responsivo -->
+<script src="script.js"></script>
 </body>
-
 </html>
