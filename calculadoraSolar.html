@@ -8,98 +8,7 @@
     <title>Automação Industrial</title>
 </head>
 
-
-<body class="bg-gradient-to-b from-gray-100 to-gray-300">
-
-    <!-- Header -->
-    <header class="header bg-gradient-to-b from-gray-900 to-gray-700 text-white p-10 flex flex-col items-center shadow-lg" id="main-header">
-
-        <img src="img/LogoSemFundo.png" alt="Logo" class="h-24 mb-4">
-        <h1 class="text-4xl font-extrabold tracking-wide">Felix Automação e Engenharia</h1>
-        </div>
-
-        <nav class="p-3 mt-4 bg-gray-800 rounded-full text-lg flex space-x-8 px-10 shadow-md">
-            <a href="index.html#sobre" class="text-gray-200 hover:text-white transition">Sobre</a>
-            <a href="index.html#processos" class="text-gray-200 hover:text-white transition">Processos</a>
-            <a href="index.html#vantagens" class="text-gray-200 hover:text-white transition">Vantagens</a>
-            <a href="index.html#contato" class="text-gray-200 hover:text-white transition">Contato</a>
-        </nav>
-    </header>
-
-    <!-- Conteúdo principal -->
-    <div class="flex flex-col items-center h-auto p-8">
-        <main class="w-full max-w-6xl">
-            <div class="flex flex-col items-center p-8">
-                <section id="calculadora-solar" class="mt-12 bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">📈 Simule seu Sistema Solar</h2>
-                    <p class="text-gray-700 mb-4">Placas Trina 610W com Micro Inversores Deye – Instalação Profissional</p>
-
-                    <label for="consumo" class="block text-gray-800 font-semibold">Informe seu consumo médio mensal (kWh):</label>
-                    <input id="consumo" type="number" class="w-full p-2 border rounded mb-4" placeholder="Ex: 800">
-
-                    <label for="rede" class="block text-gray-800 font-semibold">Tipo de rede elétrica:</label>
-                    <select id="rede" class="w-full p-2 border rounded mb-4">
-                        <option value="mono">Monofásica (30 kWh de taxa mínima)</option>
-                        <option value="bi">Bifásica (50 kWh)</option>
-                        <option value="tri">Trifásica (100 kWh)</option>
-                    </select>
-
-                    <button onclick=calcularSistema() class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full font-bold">Calcular</button>
-                    <div id="resultado" class="mt-4 text-gray-900 font-semibold"></div>
-                </section>
-            </div>
-        </main>
-    </div>
-
-    <!-- 🔹 Botão para abrir/fechar chat -->
-    <button onclick="toggleChat()" class="fixed bottom-4 right-4 bg-gray-700 text-white p-3 rounded-full shadow-lg">💬</button>
-
-    <!-- 🔹 Chatbot -->
-    <div id="chat-container" class="fixed bottom-16 right-4 bg-white shadow-xl rounded-lg w-80 hidden">
-        <div class="bg-gray-700 text-white p-3 text-center rounded-t-lg flex justify-between">
-            <span>Chat Automação</span>
-            <button onclick="toggleChat()" class="text-white">✖</button>
-        </div>
-        <div id="chat-box" class="h-64 p-3 overflow-y-auto text-gray-800"></div>
-        <div class="flex items-center border-t">
-            <input id="user-input" type="text" class="flex-1 p-2 border-none focus:outline-none" placeholder="Pergunte algo..." onkeypress="handleKeyPress(event)">
-            <button onclick="sendMessage()" class="p-2 bg-gray-700 text-white">Enviar</button>
-        </div>
-    </div>
-</body>
-<footer class="bg-gradient-to-b from-gray-900 to-gray-700 pt-8 mt-16 w-full flex flex-col items-center text-center" id="contato">
-    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-        <!-- 🔹 Logo e descrição -->
-        <div class="flex flex-col items-center">
-            <img src="img/LogoSemFundo.png" alt="Logo" class="h-20 mb-4">
-            <p class="text-gray-400">
-                Automação Industrial - Transformando tecnologia em produtividade. <br> Eficiência, segurança e inovação para sua indústria.
-            </p>
-        </div>
-
-        <!-- 🔹 Informações de Contato -->
-        <div class="flex flex-col items-center">
-            <h3 class="text-lg font-semibold text-white mb-2">Contato</h3>
-            <p class="text-gray-400">📍 Rua da Automação, 123 - São Paulo, SP</p>
-            <p class="text-gray-400">📞 (11) 98765-4321</p>
-            <p class="text-gray-400">✉️ contato@automacao.com.br</p>
-        </div>
-
-        <!-- 🔹 Links Rápidos -->
-        <div class="flex flex-col items-center">
-            <h3 class="text-lg font-semibold text-white mb-2">Links Rápidos</h3>
-            <a href="index.html#sobre" class="text-gray-400 hover:text-white transition">Sobre</a>
-            <a href="index.html#processos" class="text-gray-400 hover:text-white transition">Processos</a>
-            <a href="index.html#vantagens" class="text-gray-400 hover:text-white transition">Vantagens</a>
-            <a href="index.html#contato" class="text-gray-400 hover:text-white transition">Contato</a>
-        </div>
-    </div>
-
-    <!-- 🔹 Direitos Autorais -->
-    <div class="border-t border-gray-700 mt-6 pt-4 w-full text-center text-gray-500">
-        &copy; 2024 Automação Industrial. Todos os direitos reservados.
-    </div>
-</footer>
+<!-- Header -->
 <style>
     .header {
         position: fixed;
@@ -141,9 +50,162 @@
         padding-top: 80px;
         /* Ajuste para compensar o header menor */
     }
+    
+    .header.shrink {
+        padding: 10px 20px;
+    }
+    
+    .header.shrink img {
+        height: 40px;
+    }
+    
+    .header.shrink h1 {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+    
+    .header.shrink .menu-container {
+        justify-content: flex-start;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .header {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    section {
+        scroll-margin-top: 160px;
+    }
 </style>
+</head>
 
-<script src="script.js">
-</script>
+<body class="min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 text-gray-800">
+    <!-- Header -->
+    <header id="main-header" class="header bg-gradient-to-b from-gray-900 to-gray-700 text-white py-6 px-4 shadow-lg fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto w-full">
+            <!-- Linha principal com 3 áreas: logo, título, menu btn -->
+            <div class="flex items-center justify-between relative">
+
+                <!-- Logo à esquerda -->
+                <div class="flex-shrink-0">
+                    <img src="img/LogoSemFundo.png" alt="Logo" class="h-16 md:h-20 transition-all duration-300" />
+                </div>
+
+                <!-- Título centralizado -->
+                <div class="absolute left-1/2 transform -translate-x-1/2">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white transition-all duration-300 text-center">
+                        Felix Automação e Engenharia
+                    </h1>
+                </div>
+
+                <!-- Botão hamburguer à direita (mobile) -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white text-3xl focus:outline-none">
+          ☰
+        </button>
+                </div>
+            </div>
+
+            <!-- Menu navegação abaixo -->
+            <nav id="mobile-menu" class="hidden md:flex flex-wrap justify-center bg-gray-800 rounded-full px-6 py-2 mt-4 space-x-4 text-base md:text-lg shadow-md">
+                <a href="index.html#inicio" class="text-gray-200 hover:text-white transition">Início</a>
+                <a href="index.html#servicos" class="text-gray-200 hover:text-white transition">Serviços</a>
+                <a href="index.html#obras" class="text-gray-200 hover:text-white transition">Obras</a>
+                <a href="index.html#clientes" class="text-gray-200 hover:text-white transition">Clientes</a>
+                <a href="index.html#contato" class="text-gray-200 hover:text-white transition">Contato</a>
+                <a href="calculadoraSolar.html" class="text-gray-200 hover:text-white transition">Calculadora Solar</a>
+            </nav>
+        </div>
+    </header>
+
+    <body class="bg-gradient-to-b from-gray-100 to-gray-300">
+        <div class="flex flex-col items-center h-auto p-8">
+            <!-- Conteúdo principal -->
+            <main class="w-full max-w-6xl">
+                <div class="flex flex-col items-center p-8">
+                    <section id="calculadora-solar" class="mt-12 bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">📈 Simule seu Sistema Solar</h2>
+                        <p class="text-gray-700 mb-4">Placas Trina 610W com Micro Inversores Deye – Instalação Profissional</p>
+                        <label for="nomeCliente" class="block text-gray-800 font-semibold">Nome do Cliente:</label>
+                        <input id="nomeCliente" type="text" class="w-full p-2 border rounded mb-4" placeholder="Ex: João da Silva">
+
+                        <label for="regiaoCliente" class="block text-gray-800 font-semibold">Cidade ou Região:</label>
+                        <input id="regiaoCliente" type="text" class="w-full p-2 border rounded mb-4" placeholder="Ex: Marau - RS">
+
+                        <label for="telefoneCliente" class="block text-gray-800 font-semibold">Telefone:</label>
+                        <input id="telefoneCliente" type="tel" class="w-full p-2 border rounded mb-4" placeholder="Ex: (54) 98406-2271">
+
+                        <label for="consumo" class="block text-gray-800 font-semibold">Informe seu consumo médio mensal (kWh):</label>
+                        <input id="consumo" type="number" class="w-full p-2 border rounded mb-4" placeholder="Ex: 800">
+
+                        <label for="rede" class="block text-gray-800 font-semibold">Tipo de rede elétrica:</label>
+                        <select id="rede" class="w-full p-2 border rounded mb-4">
+                            <option value="mono">Monofásica (30 kWh de taxa mínima)</option>
+                            <option value="bi">Bifásica (50 kWh)</option>
+                            <option value="tri">Trifásica (100 kWh)</option>
+                        </select>
+                        <button onclick=calcularSistema() class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full font-bold">Calcular</button>
+
+                        <div id="resultado" class="mt-4 text-gray-900 font-semibold">
+
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-700 text-white pt-12 pb-6 mt-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                    <img src="img/LogoSemFundo.png" alt="Logo" class="h-40 mb-4" />
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Contato</h3>
+                    <p class="text-gray-400">📍 Rua Fiori Castioni, 18 - Marau - RS </p>
+                    <p class="text-gray-400">📞 +55 (54) 9 8406-2271</p>
+                    <p class="text-gray-400">✉️ felix.cnpj@gmail.com</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Links Rapidos</h3>
+                    <ul class="text-gray-400 space-y-1">
+                        <li><a href="index.html#inicio" class="text-gray-200 hover:text-white transition">Início</a></li>
+                        <li><a href="index.html#servicos" class="text-gray-200 hover:text-white transition">Serviços</a></li>
+                        <li><a href="index.html#obras" class="text-gray-200 hover:text-white transition">Obras</a></li>
+                        <li><a href="index.html#clientes" class="text-gray-200 hover:text-white transition">Clientes</a></li>
+                        <li><a href="index.html#contato" class="text-gray-200 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Siga-nos</h3>
+                    <div class="flex space-x-4 py-2">
+                        <a href="https://www.facebook.com/hectormathiasfelix" target="_blank" rel="noopener noreferrer">
+                            <img src="img/facebook-icon.png" alt="Facebook" class="h-6" />
+                        </a>
+                        <a href="https://www.instagram.com/felix.automacao/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/instagram-icon.png" alt="Instagram" class="h-6" />
+                        </a>
+                        <a href="https://wa.me/+555484062271?text=Olá!%20Gostaria%20de%20saber%20mais%20informações." target="_blank" rel="noopener noreferrer">
+                            <img src="img/whatsapp-icon.png" alt="WhatsApp" class="h-6" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-500 mt-12 border-t border-gray-600 pt-4">
+                &copy; Felix Automacao Industrial. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js">
+    </script>
 
 </html>

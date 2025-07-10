@@ -18,6 +18,24 @@ function handleKeyPress(event) {
     }
 }
 
+
+
+const toggleBtn = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const header = document.getElementById("main-header");
+
+toggleBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+});
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.classList.add("shrink");
+    } else {
+        header.classList.remove("shrink");
+    }
+});
+
 function sendMessage() {
     const userInput = document.getElementById("user-input");
     const chatBox = document.getElementById("chat-box");
@@ -49,6 +67,10 @@ function sendMessage() {
 }
 
 function calcularSistema() {
+    const nomeCliente = document.getElementById("nomeCliente").value;
+    const regiaoCliente = document.getElementById("regiaoCliente").value;
+    const telefoneCliente = document.getElementById("telefoneCliente").value;
+
     const consumoBruto = parseFloat(document.getElementById("consumo").value);
     const tipoRede = document.getElementById("rede").value;
     const resultado = document.getElementById("resultado");
@@ -58,6 +80,7 @@ function calcularSistema() {
         return;
     }
 
+    // Regras comerciais
     let taxaDesconto = 0;
     if (tipoRede === "mono") taxaDesconto = 30;
     if (tipoRede === "bi") taxaDesconto = 50;
@@ -65,7 +88,7 @@ function calcularSistema() {
 
     const consumoLiquido = Math.max(consumoBruto - taxaDesconto, 0);
     const geracaoPorPlaca = 63;
-    const precoKWh = 1.00;
+    const precoKWh = 1.0;
 
     let placas = Math.ceil(consumoLiquido / geracaoPorPlaca);
     if (placas % 2 !== 0) placas++;
@@ -88,55 +111,85 @@ function calcularSistema() {
     const percentualExcedente = ((geracaoTotal - consumoLiquido) / consumoLiquido) * 100;
 
     resultado.innerHTML = `
-    <div class="mt-8 space-y-8">
+    <div class="bg-white rounded-xl shadow-lg p-6 space-y-8 text-gray-800">
 
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-2 text-blue-700">🔋 Proposta Técnica – Sistema Fotovoltaico</h3>
-        <p><strong>Cliente:</strong> Simulação Online</p>
-        <p><strong>Eng. Responsável:</strong> Hector Felix – CREA RS264.617</p>
+      <!-- Proposta Técnica -->
+      <div>
+        <h2 class="text-2xl font-bold flex items-center mb-3">🔋 Proposta Técnica – Sistema Fotovoltaico</h2>
+        <div class="text-sm text-gray-700 space-y-1">
+          <p><strong>Cliente:</strong> ${nomeCliente}</p>
+<p><strong>Região:</strong> ${regiaoCliente}</p>
+<p><strong>Telefone:</strong> ${telefoneCliente}</p>
+
+          <p><strong>Eng. Responsável:</strong> Hector Felix – CREA RS264.617</p>
+        </div>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-4 text-blue-700">📊 Dados do Sistema</h3>
-        <table class="w-full text-left text-sm border border-gray-300">
+      <!-- Dados do Sistema -->
+      <div>
+        <h2 class="text-2xl font-bold flex items-center mb-4">📊 Dados do Sistema</h2>
+        <table class="min-w-full text-sm text-left border border-gray-200 rounded-lg">
           <tbody>
-            <tr><td class="p-2 font-medium">Consumo informado</td><td class="p-2">${consumoBruto} kWh/mês</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Desconto da taxa mínima (${tipoRede.toUpperCase()})</td><td class="p-2">- ${taxaDesconto} kWh</td></tr>
-            <tr><td class="p-2 font-medium">Consumo líquido</td><td class="p-2">${consumoLiquido} kWh/mês</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Nº de placas (Trina 610W)</td><td class="p-2">${placas} placas</td></tr>
-            <tr><td class="p-2 font-medium">Nº de micro inversores</td><td class="p-2">${microInversores} unidades</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Geração mensal estimada</td><td class="p-2">${geracaoTotal} kWh</td></tr>
-            <tr><td class="p-2 font-medium">Excedente de geração</td><td class="p-2">${percentualExcedente.toFixed(1)}%</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Área ocupada estimada</td><td class="p-2">~${(placas * 1.6).toFixed(1)} m²</td></tr>
+            <tr><td class="py-2 px-4 border-b">Consumo informado</td><td class="py-2 px-4 border-b">${consumoBruto} kWh/mês</td></tr>
+            <tr><td class="py-2 px-4 border-b">Desconto da taxa mínima (${tipoRede.toUpperCase()})</td><td class="py-2 px-4 border-b">- ${taxaDesconto} kWh</td></tr>
+            <tr><td class="py-2 px-4 border-b">Consumo líquido</td><td class="py-2 px-4 border-b">${consumoLiquido} kWh/mês</td></tr>
+            <tr><td class="py-2 px-4 border-b">Nº de placas</td><td class="py-2 px-4 border-b">${placas}</td></tr>
+            <tr><td class="py-2 px-4 border-b">Microinversores</td><td class="py-2 px-4 border-b">${microInversores}</td></tr>
+            <tr><td class="py-2 px-4 border-b">Geração estimada</td><td class="py-2 px-4 border-b">${geracaoTotal} kWh/mês</td></tr>
+            <tr><td class="py-2 px-4 border-b">Excedente de geração</td><td class="py-2 px-4 border-b">${percentualExcedente.toFixed(1)}%</td></tr>
+            <tr><td class="py-2 px-4 border-b">Área estimada</td><td class="py-2 px-4 border-b">${(placas * 1.6).toFixed(1)} m²</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-4 text-blue-700">💰 Análise Financeira</h3>
-        <table class="w-full text-left text-sm border border-gray-300">
+      <!-- Análise Financeira -->
+      <div>
+        <h2 class="text-2xl font-bold flex items-center mb-4">💰 Análise Financeira</h2>
+        <table class="min-w-full text-sm text-left border border-gray-200 rounded-lg">
           <tbody>
-            <tr><td class="p-2 font-medium">Valor por placa</td><td class="p-2">R$ ${precoPorPlaca.toLocaleString()}</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Custo total do sistema</td><td class="p-2 font-bold text-green-700">R$ ${custoTotal.toLocaleString()}</td></tr>
-            <tr><td class="p-2 font-medium">Economia mensal estimada</td><td class="p-2">R$ ${economiaMensal.toFixed(2)}</td></tr>
-            <tr class="bg-gray-50"><td class="p-2 font-medium">Payback</td><td class="p-2">${paybackMeses.toFixed(1)} meses (~${paybackAnos} anos)</td></tr>
+            <tr><td class="py-2 px-4 border-b">Valor por placa</td><td class="py-2 px-4 border-b">R$ ${precoPorPlaca.toLocaleString()}</td></tr>
+            <tr><td class="py-2 px-4 border-b font-bold text-green-600">Valor total</td><td class="py-2 px-4 border-b font-bold text-green-600">R$ ${custoTotal.toLocaleString()}</td></tr>
+            <tr><td class="py-2 px-4 border-b">Economia mensal</td><td class="py-2 px-4 border-b">R$ ${economiaMensal.toFixed(2)}</td></tr>
+            <tr><td class="py-2 px-4 border-b">Payback</td><td class="py-2 px-4 border-b">${paybackMeses.toFixed(1)} meses (~${paybackAnos} anos)</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <h3 class="text-xl font-bold mb-4 text-blue-700">📎 Itens Inclusos</h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-700">
-          <li>Painéis Trina 610W</li>
-          <li>Microinversores Deye (1 p/ 4 placas)</li>
-          <li>Estrutura de fixação (aluzinco ou telhado metálico)</li>
-          <li>String Box com proteções CA e CC</li>
-          <li>Projeto com ART e homologação</li>
-          <li>Aplicativo de monitoramento</li>
-          <li>Garantia de 25 anos para placas</li>
-        </ul>
+      <!-- Botão WhatsApp -->
+      <div class="mt-6 text-center">
+        <a id="btn-whatsapp" href="#" target="_blank"
+          class="hidden bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded shadow inline-block transition">
+          📲 Enviar orçamento por WhatsApp
+        </a>
       </div>
-
     </div>
     `;
+
+    // Aguarda o DOM atualizar, depois configura o botão
+    setTimeout(() => {
+        const btnWpp = document.getElementById("btn-whatsapp");
+        const numeroWpp = "5554984062271";
+
+        const mensagem = `
+Olá! Gostaria sou de mais informações sobre o orçamento solar:
+• Cliente: ${nomeCliente}
+• Região: ${regiaoCliente} 
+• Telefone: ${telefoneCliente}
+• Consumo informado: ${consumoBruto} kWh/mês
+• Tipo de rede: ${tipoRede.toUpperCase()}
+• Placas sugeridas: ${placas}
+• Valor estimado: R$ ${custoTotal.toLocaleString()}
+• Economia mensal: R$ ${economiaMensal.toFixed(2)}
+• Payback: ${paybackMeses.toFixed(1)} meses (~${paybackAnos} anos)
+
+Gerado automaticamente pelo site da Felix Automação.
+        `;
+
+        const link = `https://wa.me/${numeroWpp}?text=${encodeURIComponent(mensagem)}`;
+
+        if (btnWpp) {
+            btnWpp.href = link;
+            btnWpp.classList.remove("hidden");
+        }
+    }, 50); // pequena pausa para o botão existir no DOM
 }
