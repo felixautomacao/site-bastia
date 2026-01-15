@@ -1,72 +1,373 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Felix Automação e Engenharia Elétrica</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h1 {
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .contato {
-      margin-top: 30px;
-    }
-    .contato a {
-      color: #0055aa;
-      text-decoration: none;
-    }
-    .contato a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Felix Automação e Engenharia Elétrica - Soluções industriais, prediais e energia solar em Marau/RS.">
+    
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Felix Automação e Engenharia Elétrica</title>
+    
+    <style>
+        .hero-bg {
+            /* Certifique-se que a imagem industrial1.jpg existe na pasta img */
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('img/industrial1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+            max-height: 60px; /* Altura padrão para alinhar todos */
+            width: auto;
+        }
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Felix Automação e Engenharia Elétrica</h1>
-    <p>Profissionalismo e inovação em projetos elétricos e energia solar.</p>
-  </header>
+<body class="font-sans text-gray-800 bg-gray-50">
 
-  <main>
-    <h2>Entre em Contato</h2>
-    <div class="contato">
-      <p><strong>Email:</strong> <a href="mailto:felix.cnpj@gmail.com">felix.cnpj@gmail.com</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5545984062271" target="_blank">(54) 98406-2271</a></p>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-gray-900/95 backdrop-blur shadow-md py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img class="h-10 md:h-12 w-auto" src="img/LogoSemFundo.png" alt="Felix Automação">
+                    
+                    <div class="hidden md:block">
+                        <h1 class="text-white font-bold text-sm lg:text-lg uppercase tracking-wider whitespace-nowrap">
+                            Felix Automação e Engenharia Elétrica
+                        </h1>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#inicio" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Início</a>
+                        <a href="#servicos" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Serviços</a>
+                        <a href="#obras" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Portfólio</a>
+                        <a href="#calculadora" class="text-blue-400 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-bold transition border border-blue-500 hover:bg-blue-900/50">Simulador Solar</a>
+                        <a href="https://wa.me/5554984062271" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium transition shadow-lg hover:shadow-green-500/30">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> (54) 98406-2271
+                        </a>
+                    </div>
+                </div>
+
+                <div class="-mr-2 flex md:hidden">
+                    <button id="menu-toggle" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden mt-2 text-center pb-2">
+                 <h1 class="text-white font-bold text-xs uppercase tracking-wide">
+                    Felix Automação e Engenharia Elétrica
+                </h1>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-gray-900 border-t border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#inicio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#servicos" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#obras" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Obras</a>
+                <a href="#calculadora" class="text-blue-400 block px-3 py-2 rounded-md text-base font-bold">Simular Solar</a>
+                <a href="https://wa.me/5554984062271" target="_blank" class="text-white bg-green-600 block px-3 py-2 rounded-md text-base font-medium mx-4 mt-4">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Direto
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/5554984062271" class="whatsapp-float" target="_blank" title="Fale Conosco">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <section id="inicio" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="text-center px-4 max-w-5xl mx-auto z-10 pt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500 text-blue-300 text-sm font-semibold mb-6">
+                Atendendo Marau e Região
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Soluções em <span class="text-blue-400">Energia</span> e <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">Automação Industrial</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10">
+                Especialistas em Baixa Tensão, Painéis Elétricos e Energia Solar. Engenharia séria para resultados reais.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#servicos" class="px-8 py-4 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-100 md:text-lg transition shadow-xl">
+                    Conhecer Serviços
+                </a>
+                <a href="https://wa.me/5554984062271" target="_blank" class="px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:text-lg transition shadow-xl flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Orçamento no WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <div class="bg-white py-12 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wider mb-8">Empresas que confiam na nossa engenharia</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img class="client-logo object-contain" src="img/brf-logo.png" alt="BRF" title="BRF">
+                
+                <img class="client-logo object-contain" src="img/jbs-logo.png" alt="JBS" title="JBS">
+                
+                <img class="client-logo object-contain" src="img/zanin-logo.jpg" alt="Zanin" title="Zanin">
+                
+                <img class="client-logo object-contain" src="img/sana-logo.jpg" alt="Sana" title="Sana">
+                
+                <img class="client-logo object-contain" src="img/pmmarau-logo.webp" alt="Prefeitura Marau" title="Prefeitura de Marau">
+            </div>
+        </div>
     </div>
-  </main>
 
-  <footer>
-    &copy; 2025 Felix Automação e Engenharia Elétrica Ltda. Todos os direitos reservados.
-  </footer>
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nossas Soluções</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-lg text-gray-600">Abrangência técnica completa para sua indústria, comércio ou residência.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Elétrica Industrial</h3>
+                    <p class="text-gray-600"><strong>Baixa Tensão:</strong> Montagem de painéis elétricos, infraestrutura (eletrocalhas/perfilados), cabeamento de força e comando.</p>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Automação Industrial</h3>
+                    <p class="text-gray-600">Modernização de linhas de produção, programação de inversores/CLP, adequação NR-12 e otimização de processos.</p>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 text-2xl mb-6">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Energia Solar</h3>
+                    <p class="text-gray-600">Sistema Turn-key: Projeto, homologação e instalação. Reduza sua conta gerando sua própria energia limpa.</p>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-2xl mb-6">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Projetos Elétricos</h3>
+                    <p class="text-gray-600">Projetos residenciais e comerciais. Entrada de energia, distribuição e dimensionamento de cargas.</p>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center text-red-600 text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">SPDA e Aterramento</h3>
+                    <p class="text-gray-600">Instalação de sistemas de proteção contra descargas atmosféricas (para-raios) e laudos técnicos.</p>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 text-2xl mb-6">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Mão de Obra Técnica</h3>
+                    <p class="text-gray-600">Equipe qualificada para execução de obras elétricas, respeitando prazos e normas de segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="obras" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Galeria de Obras</h2>
+                <p class="mt-2 text-gray-600">Qualidade na execução.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/industrial1.jpg" alt="Painel Industrial" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Montagem de Painéis</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/solar1.jpg" alt="Solar" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Usina Solar</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/predial1.jpg" alt="Infraestrutura" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Infraestrutura</span>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/industrial2.jpg" alt="Automação" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Automação</span>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/solar2.jpg" alt="Instalação" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Instalação</span>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                    <img src="img/predial2.jpg" alt="Acabamento" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">Elétrica Predial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="py-20 bg-blue-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-10">
+                <span class="text-orange-400 font-bold tracking-wider uppercase text-sm">Economize Agora</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Simulador Solar Inteligente</h2>
+                <p class="text-blue-200 mt-4">Descubra o potencial de economia do seu telhado.</p>
+            </div>
+
+            <div class="bg-white text-gray-800 rounded-2xl shadow-2xl p-6 md:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-gray-900 border-b pb-2">1. Seus Dados</h3>
+                        <input type="text" id="nomeCliente" placeholder="Seu Nome ou Empresa" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="text" id="regiaoCliente" placeholder="Cidade (Ex: Marau/RS)" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" id="telefoneCliente" placeholder="Seu WhatsApp" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-gray-900 border-b pb-2">2. Dados de Energia</h3>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-500 uppercase">Consumo Médio (kWh)</label>
+                            <input type="number" id="consumo" placeholder="Ex: 800" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-500 uppercase">Tipo de Rede</label>
+                            <select id="rede" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="mono">Monofásica</option>
+                                <option value="bi">Bifásica</option>
+                                <option value="tri" selected>Trifásica</option>
+                            </select>
+                        </div>
+                        <button onclick="calcularSistema()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-md transition transform hover:-translate-y-1">
+                            <i class="fa-solid fa-calculator mr-2"></i> Calcular Investimento
+                        </button>
+                    </div>
+                </div>
+
+                <div id="resultado" class="mt-8 transition-all"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="img/LogoSemFundo.png" alt="Felix" class="h-10 opacity-90">
+                        <span class="text-white font-bold text-lg uppercase">Felix Automação</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">
+                        Compromisso com a qualidade técnica e segurança. Transformamos necessidades em soluções de engenharia eficientes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/hectormathiasfelix" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/felix.automacao/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/5554984062271" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6">Fale Conosco</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 mr-3 text-blue-500"></i>
+                            <span>Rua Fiori Castioni, 18<br>Marau - RS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-blue-500"></i>
+                            <span>(54) 9 8406-2271</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-blue-500"></i>
+                            <span>felix.cnpj@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6">Menu</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-blue-400 transition">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-blue-400 transition">Serviços e Soluções</a></li>
+                        <li><a href="#obras" class="hover:text-blue-400 transition">Galeria de Obras</a></li>
+                        <li><a href="#calculadora" class="hover:text-blue-400 transition">Simulador Solar</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Felix Automação e Engenharia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
