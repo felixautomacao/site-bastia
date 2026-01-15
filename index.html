@@ -13,19 +13,24 @@
     
     <style>
         .hero-bg {
-            /* Caminho da imagem de fundo */
+            /* Imagem base com gradiente para leitura do texto */
             background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('img/industrial1.jpg'); 
             
-            /* Ajuste de Zoom e Nitidez para Celular */
-            background-size: cover; /* Cobre a tela toda */
-            background-position: center top; /* Foca no topo/centro da imagem (evita cortar o horizonte) */
-            background-attachment: scroll; /* Scroll normal no celular para garantir que apareça */
+            /* CONFIGURAÇÃO PARA CELULAR (Mobile First) */
+            background-position: center center; /* Centraliza o foco */
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Fixa problemas de rolagem no iPhone */
+            
+            /* O SEGREDO DO ZOOM NO CELULAR: */
+            /* 250% faz a imagem "estourar" a tela, criando o efeito de zoom no painel */
+            background-size: 250%; 
         }
 
-        /* Efeito de Parallax apenas no Computador (telas maiores que 768px) */
+        /* CONFIGURAÇÃO PARA COMPUTADOR (Telas maiores que 768px) */
         @media (min-width: 768px) {
             .hero-bg {
-                background-attachment: fixed;
+                background-attachment: fixed; /* Efeito Paralaxe (imagem parada no fundo) */
+                background-size: cover; /* Cobre a tela toda normalmente */
                 background-position: center;
             }
         }
@@ -50,7 +55,7 @@
         /* Garante que a galeria apareça mesmo se a imagem falhar */
         .gallery-item {
             min-height: 250px; 
-            background-color: #e5e7eb; /* Fundo cinza caso a imagem não carregue */
+            background-color: #e5e7eb; 
         }
 
         /* Botão WhatsApp Flutuante */
